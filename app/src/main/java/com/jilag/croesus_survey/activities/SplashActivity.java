@@ -22,17 +22,6 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        Networks networks = new Networks(this);
-
-        if (networks.isNetworkConnected()) { // if internet connection is available
-            AsyncFunctions asyncFunctions = new AsyncFunctions(this);
-
-            asyncFunctions.getSurveys();
-            asyncFunctions.getQuestions();
-
-        }
-        else
-        {
             // initialise with static values
 
             DBHelper db = new DBHelper(getApplicationContext());
@@ -63,6 +52,16 @@ public class SplashActivity extends AppCompatActivity {
             db.addQuestion(new Questions("Q1","Have you registered for any Croesus CSR event?",3));
             db.addQuestion(new Questions("Q2","How did you hear of it?",3));
             db.addQuestion(new Questions("Q3","How old are you?",3));
+
+            // while you check the internet
+        Networks networks = new Networks(this);
+
+        if (networks.isNetworkConnected()) { // if internet connection is available
+            AsyncFunctions asyncFunctions = new AsyncFunctions(this);
+
+            asyncFunctions.getSurveys();
+            asyncFunctions.getQuestions();
+
         }
 
         Thread thread = new Thread()
