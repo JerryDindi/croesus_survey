@@ -19,9 +19,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.jilag.croesus_survey.utils.AsyncFunctions;
 import com.jilag.croesus_survey.utils.DBHelper;
 import com.jilag.croesus_survey.R;
 import com.jilag.croesus_survey.models.Users;
+import com.jilag.croesus_survey.utils.Networks;
 
 import java.util.List;
 
@@ -89,6 +91,15 @@ public class MainActivity extends AppCompatActivity {
                     if (size==0)
                     {
                         db.addUser(new Users(id_num, fname, lname,""));
+                    }
+
+                    Networks networks = new Networks(getApplicationContext());
+
+                    if (networks.isNetworkConnected()) { // if internet connection is available
+                        AsyncFunctions asyncFunctions = new AsyncFunctions(getApplicationContext());
+
+                        asyncFunctions.updateUsers();
+
                     }
 
                     Intent intent = new Intent(getApplicationContext(),SurveysActivity.class);

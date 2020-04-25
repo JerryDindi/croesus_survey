@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
 
         Networks networks = new Networks(this);
 
-        if (networks.isNetworkConnected()) { // if no connection
+        if (networks.isNetworkConnected()) { // if internet connection is available
             AsyncFunctions asyncFunctions = new AsyncFunctions(this);
 
             asyncFunctions.getSurveys();

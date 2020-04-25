@@ -12,9 +12,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.jilag.croesus_survey.utils.AsyncFunctions;
 import com.jilag.croesus_survey.utils.DBHelper;
 import com.jilag.croesus_survey.R;
 import com.jilag.croesus_survey.models.Answers;
+import com.jilag.croesus_survey.utils.Networks;
 
 import java.util.List;
 
@@ -121,6 +123,15 @@ public class SummaryActivity extends AppCompatActivity {
                 db.addAnswer(new Answers(id_num,Integer.parseInt(qstn_id1),ans_1));
                 db.addAnswer(new Answers(id_num,Integer.parseInt(qstn_id2),ans_2));
                 db.addAnswer(new Answers(id_num,Integer.parseInt(qstn_id3),ans_3));
+
+                Networks networks = new Networks(getApplicationContext());
+
+                if (networks.isNetworkConnected()) { // if internet connection is available
+                    AsyncFunctions asyncFunctions = new AsyncFunctions(getApplicationContext());
+
+                    asyncFunctions.updateAnswers();
+
+                }
 
                 finish();
                 Intent intent = new Intent(getApplicationContext(),SurveysActivity.class);
