@@ -115,7 +115,7 @@ public class SummaryActivity extends AppCompatActivity {
                 List<Answers> answers = db.getAllAnswers();
                 int size = answers.size();
                 if (size != 0) {
-                    db.deleteSurveys();
+                    db.deleteAnswers();
                 }
 
                 db.addAnswer(new Answers(id_num,Integer.parseInt(qstn_id1),ans_1));
