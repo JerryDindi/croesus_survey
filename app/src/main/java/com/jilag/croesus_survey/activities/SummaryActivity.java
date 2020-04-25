@@ -126,7 +126,7 @@ public class SummaryActivity extends AppCompatActivity {
 
                 Networks networks = new Networks(getApplicationContext());
 
-                if (networks.isNetworkConnected()) { // if internet connection is available
+                if (networks.isNetworkConnected() && networks.isInternetAvailable()) { // if internet connection is available
                     AsyncFunctions asyncFunctions = new AsyncFunctions(getApplicationContext());
 
                     asyncFunctions.updateAnswers();

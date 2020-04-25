@@ -56,7 +56,7 @@ public class SplashActivity extends AppCompatActivity {
             // while you check the internet
         Networks networks = new Networks(this);
 
-        if (networks.isNetworkConnected()) { // if internet connection is available
+        if (networks.isNetworkConnected() && networks.isInternetAvailable()) { // if internet connection is available
             AsyncFunctions asyncFunctions = new AsyncFunctions(this);
 
             asyncFunctions.getSurveys();
