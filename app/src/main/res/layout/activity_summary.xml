@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.SummaryActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Basic info"
+        app:titleTextColor="@color/colorAccent"
+        android:background="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/tvQ1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="What is your age?"/>
+
+    <RadioGroup
+        android:id="@+id/radioBool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false">
+
+        <RadioButton
+            android:layout_marginLeft="10dp"
+            android:id="@+id/radioYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_yes"
+            android:checked="true" />
+
+        <RadioButton
+            android:layout_marginLeft="10dp"
+            android:id="@+id/radioNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_no" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvQ2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="What is your age?"/>
+
+    <EditText
+        android:id="@+id/etQ2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:enabled="false"
+        />
+
+    <TextView
+        android:id="@+id/tvQ3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="What is your age?"/>
+
+    <EditText
+        android:id="@+id/etQ3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:layout_margin="20dp"/>
+
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Finish"
+        android:layout_margin="20dp"/>
+
+</LinearLayout>
